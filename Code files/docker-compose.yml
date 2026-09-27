@@ -1,0 +1,19 @@
+services:
+
+  legalease:
+
+    build: .
+
+    ports:
+      - "8000:8000"
+      - "8501:8501"
+
+    environment:
+
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.8-flash}
+
+      BACKEND_URL: http://127.0.0.1:8000
+
+      ALLOWED_ORIGINS: http://localhost:8501,http://127.0.0.1:8501
